@@ -8,15 +8,24 @@
 
 //creare costante per il container
 const container = document.querySelector('.container');
-console.log(container);
 
-for (let i=0; i<=100; i++) {
+for (let i=1; i<=100; i++) {
     //creazione box contenente il numero
     const element = document.createElement('div');
     element.classList.add('box');
-    console.log(i);
-    element.innerHTML= i;
     
-
+    //if
+    if ((i%3==0) && (i%5==0)) {
+        element.innerHTML= "FizzBuzz";
+    } else if (i%5==0) {
+        element.innerHTML = "Buzz";
+    } else if (i%3==0) {
+        element.innerHTML = "Fizz";
+    } else {
+        element.innerHTML = i;
+    }
+    
+    
+    //element.innerHTML= i;
     container.append(element);
 }
